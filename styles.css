@@ -1,0 +1,359 @@
+:root {
+  --primary: #8c6b4f;
+  --secondary: #f6f1eb;
+  --text: #333;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Cormorant Garamond', serif;
+  color: var(--text);
+  background: var(--secondary);
+  line-height: 1.7;
+  font-size: 1.2rem;
+}
+
+header {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem 1rem;
+  background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+    url('https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&w=1350&q=80')
+    center/cover no-repeat;
+  color: #fff;
+}
+
+header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  margin: 0.5rem 0;
+}
+
+header p {
+  margin: 0.3rem 0;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.families {
+  margin-top: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.family span {
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+}
+
+.family small {
+  display: block;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.family-separator {
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
+
+section {
+  padding: 2rem 1rem;
+  max-width: 900px;
+  margin: auto;
+}
+
+h2 {
+  text-align: center;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  font-family: 'Playfair Display', serif;
+}
+
+.card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.schedule-item {
+  margin-bottom: 0.6rem;
+}
+
+#flowers {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.flower {
+  position: absolute;
+  top: -40px;
+  font-size: 20px;
+  animation: fall linear forwards;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(360deg);
+  }
+}
+
+@media (min-width: 768px) {
+  body {
+    font-size: 1.4rem;
+  }
+
+  header h1 {
+    font-size: 3rem;
+  }
+
+  .families {
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .details-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.card.map-card {
+  padding: 0;
+  overflow: hidden;
+}
+
+.map-container {
+  width: 100%;
+  height: 320px;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.form-container iframe {
+  width: 100%;
+  min-height: 900px;
+  border: 0;
+}
+
+#welcome-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+    url('https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&w=1350&q=80')
+    center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  z-index: 9999;
+  padding: 1.5rem;
+}
+
+.welcome-content h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.4rem;
+  margin: 0.5rem 0;
+  letter-spacing: 0.05em;
+}
+
+.welcome-small {
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.welcome-date {
+  margin-bottom: 2rem;
+  letter-spacing: 0.15em;
+}
+
+#enter-btn {
+  background: rgba(255,255,255,0.9);
+  border: none;
+  padding: 0.9rem 2rem;
+  font-size: 1rem;
+  border-radius: 30px;
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 0.08em;
+  color: #333;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#enter-btn:active {
+  transform: scale(0.97);
+}
+
+@media (min-width: 768px) {
+  .welcome-content h1 {
+    font-size: 3rem;
+  }
+}
+
+/* Intro ekranı */
+#intro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #f6f1eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+#main-site {
+  display: none;
+}
+
+/* Zarf */
+
+.envelope-wrapper {
+  perspective: 1000px;
+}
+
+.envelope {
+  position: relative;
+  width: 90vw;
+  max-width: 360px;
+  height: 220px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+  overflow: hidden;
+}
+
+/* Kapak */
+
+.flap {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: var(--primary);
+  opacity: 70%;
+  clip-path: polygon(0 0, 50% 55%, 100% 0);
+  transform-origin: top;
+  transition: transform 3s ease;
+  z-index: 3;
+}
+
+.envelope.open .flap {
+  transform: rotateX(180deg);
+}
+
+/* İç kart */
+
+.letter {
+  position: absolute;
+  left: 5%;
+  width: 90%;
+  height: 200px;
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  text-align: center;
+  padding: 1.5rem 1rem;
+  top: 60px;
+  transition: transform 3s ease;
+  z-index: -1;
+}
+
+/* Kart yukarı çıksın */
+
+.envelope.open .letter {
+  transform: translateY(-50px);
+  z-index: 2;
+}
+
+/* Yazılar */
+
+.letter h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.7rem;
+  margin: 0.4rem 0;
+}
+
+.intro-small {
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.intro-date {
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.1em;
+}
+
+/* Buton */
+
+#openInvitation {
+  background: var(--primary);
+  opacity: 80%;
+  color: #fff;
+  border: none;
+  padding: 0.7rem 1.4rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+#openInvitation:hover {
+opacity: 60%;
+}
+
+/* Büyük ekran */
+
+@media (min-width: 768px) {
+  .envelope {
+    height: 240px;
+  }
+
+  .letter {
+    height: 220px;
+  }
+
+  .envelope.open .letter {
+    transform: translateY(-160px);
+  }
+}
+
