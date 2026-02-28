@@ -43,11 +43,12 @@ header p {
 }
 
 .families {
-  margin-top: 1.2rem;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.4rem;
+  flex-direction: row;       /* aileleri yan yana sıralar */
+  align-items: center;       /* dikey ortalar */
+  justify-content: center;   /* yatay ortalar */
+  gap: 1rem;                 /* aileler arası boşluk */
+  margin-top: 1.2rem;        /* üstten boşluk */
 }
 
 .family span {
@@ -223,7 +224,6 @@ h2 {
   }
 }
 
-/* Intro ekranı */
 #intro {
   position: fixed;
   top: 0;
@@ -241,8 +241,6 @@ h2 {
   display: none;
 }
 
-/* Zarf */
-
 .envelope-wrapper {
   perspective: 1000px;
 }
@@ -257,8 +255,6 @@ h2 {
   box-shadow: 0 15px 40px rgba(0,0,0,0.15);
   overflow: hidden;
 }
-
-/* Kapak */
 
 .flap {
   position: absolute;
@@ -276,8 +272,6 @@ h2 {
   transform: rotateX(180deg);
 }
 
-/* İç kart */
-
 .letter {
   position: absolute;
   left: 5%;
@@ -293,14 +287,10 @@ h2 {
   z-index: -1;
 }
 
-/* Kart yukarı çıksın */
-
 .envelope.open .letter {
   transform: translateY(-50px);
   z-index: 2;
 }
-
-/* Yazılar */
 
 .letter h1 {
   font-family: 'Playfair Display', serif;
@@ -318,8 +308,6 @@ h2 {
   margin-bottom: 1.2rem;
   letter-spacing: 0.1em;
 }
-
-/* Buton */
 
 #openInvitation {
   background: var(--primary);
@@ -341,8 +329,6 @@ h2 {
 opacity: 60%;
 }
 
-/* Büyük ekran */
-
 @media (min-width: 768px) {
   .envelope {
     height: 240px;
@@ -357,3 +343,34 @@ opacity: 60%;
   }
 }
 
+.scroll-down-box {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  animation: bounce 1.5s infinite;
+}
+
+.scroll-down-box .arrow {
+  font-size: 1.8rem;
+  color: var(--primary);
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(8px);
+  }
+  60% {
+    transform: translateY(4px);
+  }
+}
