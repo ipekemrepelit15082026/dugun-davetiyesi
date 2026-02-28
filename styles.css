@@ -160,7 +160,7 @@ h2 {
 
 .form-container iframe {
   width: 100%;
-  min-height: 900px;
+  min-height: 1000px;
   border: 0;
 }
 
@@ -343,7 +343,6 @@ opacity: 60%;
   }
 }
 
-/* Mobile-first stil */
 .scroll-down-box {
   display: flex;
   justify-content: center;
@@ -356,7 +355,7 @@ opacity: 60%;
   cursor: pointer;
   box-shadow: 0 3px 8px rgba(0,0,0,0.2);
   animation: bounce 1.5s infinite;
-  text-decoration: none; /* link stilini kaldır */
+  text-decoration: none; 
 }
 
 .scroll-down-box .arrow {
@@ -364,26 +363,22 @@ opacity: 60%;
   color: var(--primary);
 }
 
-/* Yukarı-aşağı animasyon */
 @keyframes bounce {
   0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
   40% { transform: translateY(6px); }
   60% { transform: translateY(3px); }
 }
 
-/* Tablet */
 @media (min-width: 768px) {
   .scroll-down-box { width: 50px; height: 50px; }
   .scroll-down-box .arrow { font-size: 1.8rem; }
 }
 
-/* Desktop */
 @media (min-width: 1200px) {
   .scroll-down-box { width: 60px; height: 60px; }
   .scroll-down-box .arrow { font-size: 2rem; }
 }
 
-/* Tüm sayfada yumuşak scroll */
 html {
   scroll-behavior: smooth;
 }
